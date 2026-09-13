@@ -1,0 +1,1323 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Teema- ja efektimeik Tallinnas: Halloween, SFX, fantaasia, UV ja kehamaaling. Hinnad, kestused ja vabade aegade kalender.">
+<meta property="og:title" content="Grimmikoda — teemameik Tallinnas">
+<meta property="og:description" content="Halloween, erieffektid, fantaasia, UV ja kehamaaling. Hinnad, kestused ja broneerimine.">
+<meta property="og:type" content="website">
+<style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body><title>Grimmikoda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&family=Parisienne&display=swap">
+<style>
+  :root{
+    --ink:#120E14;
+    --ink-2:#1B141F;
+    --ink-3:#241C2A;
+    --line:#332839;
+    --bone:#EFE5D7;
+    --bone-2:#A5988F;
+    --bone-3:#736A6E;
+    --brass:#C9A24B;
+    --brass-dim:#8A6F33;
+    --oxblood:#B02A40;
+    --oxblood-lit:#D2465C;
+    --ok:#5C9B78;
+
+    --display:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+    --script:"Parisienne","Snell Roundhand","Brush Script MT",cursive;
+    --body:"Jost","Avenir Next","Segoe UI",Helvetica,sans-serif;
+    --mono:"Jost","Avenir Next","Segoe UI",Helvetica,sans-serif;
+
+    --maxw:1180px;
+    --pad:clamp(18px,4vw,40px);
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--bone);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.66;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,video{display:block;max-width:100%}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:2px}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+  section{padding-block:clamp(56px,8vw,104px)}
+
+  /* ---------- shared type ---------- */
+  .eyebrow{
+    font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--brass);margin:0 0 16px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--brass-dim);flex:none}
+  h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0}
+  h1{font-size:clamp(48px,8.4vw,96px);line-height:.98;letter-spacing:-.015em}
+  h2{font-size:clamp(33px,4.9vw,54px);line-height:1.06;letter-spacing:-.01em}
+  h3{font-size:22px;line-height:1.24;font-weight:600}
+  .lede{font-size:clamp(16px,1.7vw,18.5px);color:var(--bone-2);max-width:60ch;line-height:1.7;font-weight:300}
+  .sec-head{display:flex;flex-wrap:wrap;gap:20px 48px;align-items:flex-end;justify-content:space-between;margin-bottom:38px}
+  .sec-head .lede{max-width:44ch}
+
+  /* ---------- bulb rail (vanity mirror) ---------- */
+  .rail{display:flex;gap:14px;align-items:center;justify-content:center;padding:0 var(--pad)}
+  .rail span{
+    width:7px;height:7px;border-radius:50%;background:var(--brass-dim);
+    box-shadow:0 0 10px rgba(201,162,75,.45);flex:none;
+  }
+  .rail span:nth-child(even){opacity:.42}
+
+  /* ---------- top strip ---------- */
+  .demo{
+    background:var(--ink-2);border-bottom:1px solid var(--line);
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--bone-3);
+  }
+  .demo .wrap{display:flex;gap:8px 18px;flex-wrap:wrap;padding-block:9px;align-items:center}
+  .demo b{color:var(--brass);font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+
+  /* ---------- nav ---------- */
+  header.nav{position:sticky;top:0;z-index:60;background:rgba(18,14,20,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  header.nav .wrap{display:flex;align-items:center;gap:22px;padding-block:14px}
+  .brand{font-family:var(--script);font-size:29px;line-height:1;letter-spacing:.01em;text-decoration:none;font-weight:400;padding-bottom:4px}
+  .brand em{font-style:normal;color:var(--oxblood-lit)}
+  nav.links{display:flex;gap:24px;margin-left:auto;font-size:14px}
+  nav.links a{text-decoration:none;color:var(--bone-2);transition:color .18s}
+  nav.links a:hover{color:var(--bone)}
+  .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-family:var(--mono);font-size:11px}
+  .lang button{background:none;border:0;color:var(--bone-3);padding:6px 11px;cursor:pointer;letter-spacing:.1em;font:inherit}
+  .lang button[aria-pressed="true"]{background:var(--ink-3);color:var(--brass)}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;justify-content:center;
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    padding:13px 22px;border-radius:2px;text-decoration:none;border:1px solid transparent;cursor:pointer;
+    transition:background .18s,border-color .18s,color .18s;
+  }
+  .btn-primary{background:var(--oxblood);color:#fff}
+  .btn-primary:hover{background:var(--oxblood-lit)}
+  .btn-ghost{border-color:var(--line);color:var(--bone)}
+  .btn-ghost:hover{border-color:var(--brass-dim);color:var(--brass)}
+  .btn-sm{padding:10px 16px;font-size:11.5px}
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:clamp(40px,6vw,72px);padding-bottom:clamp(40px,6vw,68px)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,5vw,64px);align-items:center}
+  h1 .ox{color:var(--oxblood-lit)}
+  h1 .it{font-family:var(--script);font-weight:400;font-size:1.18em;line-height:1.05;display:inline-block;padding-right:.06em}
+  .hero p.lede{margin:22px 0 30px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+  .facts{display:flex;flex-wrap:wrap;gap:10px 30px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--bone-2)}
+  .facts b{color:var(--brass);font-weight:500}
+  .collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:12px}
+  .collage figure{margin:0;position:relative;overflow:hidden;background:var(--ink-2)}
+  .collage img{width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.04)}
+  .collage .tall{grid-row:span 2;aspect-ratio:3/4.35}
+  .collage .sq{aspect-ratio:1/1}
+  .cap{
+    position:absolute;left:0;bottom:0;right:0;padding:20px 12px 9px;
+    background:linear-gradient(to top,rgba(18,14,20,.92),transparent);
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-2);
+  }
+
+  /* ---------- specialties ---------- */
+  .spec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
+  .spec{background:var(--ink);padding:26px 24px 28px;display:flex;flex-direction:column;gap:12px}
+  .spec .num{font-family:var(--mono);font-size:11px;color:var(--brass-dim);letter-spacing:.16em}
+  .spec p{margin:0;color:var(--bone-2);font-size:14.5px;line-height:1.6}
+  .spec .tags{margin-top:auto;padding-top:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--bone-3);text-transform:uppercase}
+
+  /* ---------- gallery ---------- */
+  .notice{
+    display:flex;gap:12px;align-items:flex-start;border:1px dashed var(--brass-dim);
+    padding:14px 16px;border-radius:2px;background:rgba(201,162,75,.05);
+    font-size:13.5px;color:var(--bone-2);margin-bottom:26px;max-width:76ch;
+  }
+  .notice svg{flex:none;margin-top:3px}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+  .chip{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    background:none;border:1px solid var(--line);color:var(--bone-2);padding:8px 14px;border-radius:999px;cursor:pointer;
+    transition:.18s;
+  }
+  .chip:hover{border-color:var(--brass-dim);color:var(--bone)}
+  .chip[aria-pressed="true"]{background:var(--bone);border-color:var(--bone);color:var(--ink)}
+  .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .gal figure{margin:0;position:relative;overflow:hidden;background:var(--ink-2);aspect-ratio:3/4}
+  .gal figure.wide{grid-column:span 2;aspect-ratio:3/2}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .5s ease;filter:saturate(.9)}
+  .gal figure:hover img{transform:scale(1.04);filter:saturate(1.05)}
+  .gal figcaption{
+    position:absolute;inset:auto 0 0 0;padding:26px 14px 12px;
+    background:linear-gradient(to top,rgba(18,14,20,.94),transparent);
+    font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-2);
+  }
+
+  /* ---------- reel ---------- */
+  .reel{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .clip{border:1px solid var(--line);background:var(--ink-2)}
+  .clip video{width:100%;aspect-ratio:16/10;object-fit:cover;background:#000}
+  .clip .meta{padding:12px 14px 14px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+  .clip .meta span:first-child{font-size:14px}
+  .clip .meta span:last-child{font-family:var(--mono);font-size:10.5px;color:var(--bone-3);letter-spacing:.1em;white-space:nowrap}
+
+  /* ---------- call sheet ---------- */
+  .sheet{border:1px solid var(--line)}
+  .sheet-group{border-bottom:1px solid var(--line)}
+  .sheet-group:last-child{border-bottom:0}
+  .sheet-group > h3{
+    font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--brass);background:var(--ink-2);padding:11px 18px;border-bottom:1px solid var(--line);
+  }
+  .row{
+    display:grid;grid-template-columns:minmax(0,1fr) 128px 112px;gap:8px 18px;align-items:baseline;
+    padding:15px 18px;border-bottom:1px solid rgba(51,40,57,.55);
+  }
+  .row:last-child{border-bottom:0}
+  .row:hover{background:rgba(27,20,31,.6)}
+  .row .name{font-size:15.5px}
+  .row .sub{display:block;color:var(--bone-3);font-size:13px;line-height:1.45;margin-top:2px}
+  .row .dur,.row .price{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
+  .row .dur{color:var(--bone-2)}
+  .row .price{color:var(--bone);text-align:right;font-weight:500}
+  .row .price small{display:block;color:var(--bone-3);font-size:10.5px;letter-spacing:.06em;font-weight:400}
+  .sheet-head{
+    display:grid;grid-template-columns:minmax(0,1fr) 128px 112px;gap:18px;padding:10px 18px;
+    font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-3);
+    border-bottom:1px solid var(--line);background:var(--ink-2);
+  }
+  .sheet-head span:last-child{text-align:right}
+
+  .extras{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2px;background:var(--line);border:1px solid var(--line);margin-top:26px}
+  .extra{background:var(--ink);padding:16px 18px}
+  .extra dt{font-size:14.5px;margin-bottom:3px;font-weight:400}
+  .extra dd{margin:0;font-family:var(--mono);font-size:13px;font-weight:500;color:var(--brass);font-variant-numeric:tabular-nums}
+
+  /* ---------- steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+  .step{border-top:1px solid var(--line);padding-top:16px}
+  .step .n{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--oxblood-lit);display:block;margin-bottom:8px}
+  .step h3{font-size:21px;font-weight:600;margin-bottom:6px}
+  .step p{margin:0;font-size:14px;color:var(--bone-2)}
+
+  /* ---------- booking ---------- */
+  .book{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .book-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,4vw,48px);align-items:start}
+  form.bk{display:grid;gap:16px}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1/-1}
+  label{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-3)}
+  input,select,textarea{
+    font-family:var(--body);font-size:15px;color:var(--bone);background:var(--ink);
+    border:1px solid var(--line);border-radius:2px;padding:11px 12px;width:100%;
+  }
+  select{font-family:var(--mono);font-size:13px}
+  textarea{resize:vertical;min-height:84px;line-height:1.55}
+  input:focus,select:focus,textarea:focus{border-color:var(--brass-dim);outline:none;box-shadow:0 0 0 1px var(--brass-dim)}
+  .outbox{
+    font-family:var(--mono);font-size:13px;color:var(--brass);background:var(--ink);
+    border:1px dashed var(--line);border-radius:2px;padding:11px 12px;
+  }
+  .slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:7px}
+  .slot{
+    font-family:var(--mono);font-size:13px;letter-spacing:.04em;font-variant-numeric:tabular-nums;
+    background:var(--ink);border:1px solid var(--line);color:var(--bone);border-radius:2px;
+    padding:10px 6px;cursor:pointer;position:relative;transition:border-color .16s,background .16s,color .16s;
+  }
+  .slot:hover:not(:disabled){border-color:var(--brass-dim);color:var(--brass)}
+  .slot i{display:block;font-style:normal;font-size:9px;letter-spacing:.08em;color:var(--bone-3);margin-top:2px}
+  .slot.req{border-style:dashed}
+  .slot.on{background:var(--oxblood);border-color:var(--oxblood);border-style:solid;color:#fff}
+  .slot.on i{color:rgba(255,255,255,.7)}
+  .slot:disabled{color:var(--bone-3);cursor:not-allowed;opacity:.5;text-decoration:line-through;text-decoration-color:var(--oxblood)}
+  .slotnote{margin:9px 0 0;font-family:var(--mono);font-size:11.5px;color:var(--bone-3);letter-spacing:.04em}
+  .consent{display:flex;gap:11px;align-items:flex-start;font-size:13px;color:var(--bone-2)}
+  .consent input{width:16px;height:16px;flex:none;margin-top:2px;accent-color:var(--oxblood)}
+  .err{color:var(--oxblood-lit);font-size:13px;font-family:var(--mono);min-height:1px}
+
+  .quote{position:sticky;top:88px;border:1px solid var(--line);background:var(--ink)}
+  .quote h3{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);padding:13px 18px;border-bottom:1px solid var(--line);background:var(--ink-2);font-weight:600}
+  .quote .body{padding:16px 18px}
+  .qline{display:flex;justify-content:space-between;gap:14px;font-family:var(--mono);font-size:12.5px;padding:6px 0;color:var(--bone-2);font-variant-numeric:tabular-nums}
+  .qline span:last-child{color:var(--bone);white-space:nowrap}
+  .qline.muted span:last-child{color:var(--bone-3)}
+  .qtotal{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-top:12px;padding-top:13px;border-top:1px solid var(--line)}
+  .qtotal .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-3)}
+  .qtotal .val{font-family:var(--display);font-size:44px;font-weight:500;line-height:1;font-variant-numeric:tabular-nums}
+  .qnote{font-size:12px;color:var(--bone-3);margin:12px 0 0;line-height:1.5}
+  .done{border:1px solid var(--ok);padding:22px;background:rgba(92,155,120,.07)}
+  .done h3{font-size:24px;font-weight:600;margin-bottom:8px}
+  .done p{color:var(--bone-2);font-size:14px;margin:0 0 8px}
+  .done dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-family:var(--mono);font-size:12.5px;margin:14px 0 0}
+  .done dt{color:var(--bone-3)}
+  .done dd{margin:0}
+
+  /* ---------- faq + footer ---------- */
+  .faq{display:grid;gap:2px;background:var(--line);border:1px solid var(--line)}
+  details{background:var(--ink);padding:0}
+  summary{cursor:pointer;padding:16px 18px;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:var(--mono);color:var(--brass);font-size:16px;flex:none}
+  details[open] summary::after{content:"−"}
+  details p{margin:0;padding:0 18px 18px;color:var(--bone-2);font-size:14.5px;max-width:76ch}
+
+  footer{border-top:1px solid var(--line);background:var(--ink-2)}
+  footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:30px;padding-block:44px}
+  footer h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-3);margin:0 0 12px;font-weight:500}
+  footer p,footer a{margin:0 0 6px;font-size:14.5px;color:var(--bone-2);text-decoration:none;display:block}
+  .loc{margin:0 0 14px!important}
+  .loc span{display:block}
+  .loc .lk{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);margin-bottom:2px}
+  footer a:hover{color:var(--brass)}
+  .colophon{border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--bone-3);letter-spacing:.05em}
+  .colophon .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;padding-block:16px;justify-content:space-between}
+  .ph{color:var(--brass);border-bottom:1px dotted var(--brass-dim)}
+
+  @media (max-width:880px){
+    .hero-grid,.book-grid{grid-template-columns:1fr}
+    .quote{position:static}
+    .row,.sheet-head{grid-template-columns:minmax(0,1fr) 104px;}
+    .row .dur{grid-column:1;color:var(--bone-3);font-size:12px}
+    .row .price{grid-row:1;grid-column:2}
+    .sheet-head span:nth-child(2){display:none}
+  }
+  @media (max-width:560px){
+    .fields{grid-template-columns:1fr}
+    .gal figure.wide{grid-column:span 1;aspect-ratio:3/4}
+    nav.links{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .gal figure:hover img{transform:none}
+  }
+</style>
+
+<div class="demo">
+  <div class="wrap">
+    <b>Näidisleht</b>
+    <span data-en="Brand name, contacts and photos are placeholders, and the calendar holds example bookings. The images and clips are free-licence reference material from Pexels — not this artist's portfolio.">Brändinimi, kontaktid ja fotod on kohatäited ning kalendris on näidisbroneeringud. Pildid ja klipid on vabakasutusega referentsmaterjal Pexelsist — mitte selle artisti portfoolio.</span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Grimmik<em>o</em>da</a>
+    <nav class="links">
+      <a href="#tood" data-en="Work">Tööd</a>
+      <a href="#reel" data-en="Reel">Reel</a>
+      <a href="#hinnad" data-en="Prices">Hinnad</a>
+      <a href="#kkk" data-en="FAQ">KKK</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Keel / Language">
+      <button type="button" data-lang="et" aria-pressed="true">EST</button>
+      <button type="button" data-lang="en" aria-pressed="false">ENG</button>
+    </div>
+    <a class="btn btn-primary btn-sm" href="#broneeri" data-en="Book">Broneeri</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" data-en="Theme &amp; effects makeup · Tallinn">Teema- ja efektimeik · Tallinn</p>
+        <h1><span data-en="Faces that">Näod, mis</span> <span class="it ox" data-en="stay in the room">jäävad meelde</span></h1>
+        <p class="lede" data-en="Halloween, special effects, fantasy characters, UV and body art. From a single wound to a full creature transformation — for parties, shoots, stage and events. Studio in Tallinn, on location anywhere in Estonia by arrangement.">Halloween, erieffektid, fantaasiategelased, UV ja kehamaaling. Ühest haavast täieliku olendini — pidudeks, võteteks, laval ja üritustel. Stuudio Tallinnas, kokkuleppel sõidan üle Eesti.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#broneeri" data-en="Book a time">Broneeri aeg</a>
+          <a class="btn btn-ghost" href="#hinnad" data-en="Prices &amp; duration">Hinnad ja kestus</a>
+        </div>
+        <div class="facts">
+          <span><b>45 min – 3 h</b> <span data-en="per look">meigi kohta</span></span>
+          <span><b>45–195 €</b> <span data-en="per service">teenuse kohta</span></span>
+          <span><b>Kalamaja</b> <span data-en="studio in Tallinn">stuudio Tallinnas</span></span>
+        </div>
+      </div>
+      <div class="collage">
+        <figure class="tall">
+          <img src="media/halloween-skull-portrait.jpg" alt="Kolju-näomaalinguga portree hämaras valguses" loading="eager" width="900" height="1300">
+          <figcaption class="cap" data-en="Skull / classic Halloween">Kolju / Halloweeni klassika</figcaption>
+        </figure>
+        <figure class="sq">
+          <img src="media/uv-neon-body.jpg" alt="Neoonvärvides kehamaaling ultraviolettvalguses" loading="eager" width="800" height="800">
+          <figcaption class="cap" data-en="UV / blacklight">UV / mustvalgus</figcaption>
+        </figure>
+        <figure class="sq">
+          <img src="media/catrina-portrait.jpg" alt="Catrina-stiilis surnute päeva meik" loading="eager" width="800" height="800">
+          <figcaption class="cap" data-en="Catrina / Day of the Dead">Catrina / surnute päev</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <div class="rail" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <section id="tegevus">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" data-en="Specialities">Erialad</p>
+          <h2 data-en="Six things I am booked for">Kuus asja, milleks mind tellitakse</h2>
+        </div>
+        <p class="lede" data-en="Classic glam is on the list too, but my real work starts where everyday makeup ends.">Klassikaline glam-meik on samuti olemas, aga minu päris töö algab seal, kus tavameik lõpeb.</p>
+      </div>
+      <div class="spec-grid">
+        <article class="spec">
+          <span class="num">01</span>
+          <h3 data-en="Halloween &amp; horror">Halloween ja õudus</h3>
+          <p data-en="Skulls, vampires, witches, zombies, porcelain dolls. Water- and alcohol-based paints that survive a whole night out.">Koljud, vampiirid, nõiad, zombid, portselannukud. Vee- ja alkoholibaasil värvid, mis peavad terve öö vastu.</p>
+          <span class="tags" data-en="45–60 min · from 65 €">45–60 min · alates 65 €</span>
+        </article>
+        <article class="spec">
+          <span class="num">02</span>
+          <h3 data-en="SFX &amp; prosthetics">SFX ja proteesid</h3>
+          <p data-en="Wounds, scars, burns, bruises, skin textures. Silicone and gelatine appliances, modelling wax, artificial blood and hair.">Haavad, armid, põletused, verevalumid, nahatekstuurid. Silikoon- ja želatiinproteesid, modelleerimisvaha, kunstveri ja -karv.</p>
+          <span class="tags" data-en="1–3 h · from 85 €">1–3 h · alates 85 €</span>
+        </article>
+        <article class="spec">
+          <span class="num">03</span>
+          <h3 data-en="Fantasy &amp; cosplay">Fantaasia ja cosplay</h3>
+          <p data-en="Creatures, elves, deities, comic characters. Crystals, foils, colour blocking and sculpted brows to a reference image.">Olendid, haldjad, jumalused, koomiksitegelased. Kristallid, fooliumid, värviplokid ja skulptuursed kulmud referentspildi järgi.</p>
+          <span class="tags" data-en="90–120 min · from 95 €">90–120 min · alates 95 €</span>
+        </article>
+        <article class="spec">
+          <span class="num">04</span>
+          <h3 data-en="UV &amp; neon">UV ja neoon</h3>
+          <p data-en="Fluorescent line work for festivals, club nights and blacklight shoots. Reads as normal makeup in daylight, ignites under UV.">Fluorestseeruv joonistus festivalile, klubiõhtule ja mustvalguse võtetele. Päevavalguses tavameik, UV all süttib.</p>
+          <span class="tags" data-en="45–60 min · from 70 €">45–60 min · alates 70 €</span>
+        </article>
+        <article class="spec">
+          <span class="num">05</span>
+          <h3 data-en="Events &amp; face painting">Üritused ja näomaalingud</h3>
+          <p data-en="A painting corner at a company party, festival or birthday. 5–8 designs an hour, child-safe certified paints.">Maalimisnurk firmapeol, festivalil või sünnipäeval. 5–8 kujundust tunnis, lastele sertifitseeritud värvid.</p>
+          <span class="tags" data-en="1–3 h · 75 €/h">1–3 h · 75 €/h</span>
+        </article>
+        <article class="spec">
+          <span class="num">06</span>
+          <h3 data-en="Stage, film &amp; editorial">Lava, film ja editorial</h3>
+          <p data-en="Character makeup for theatre, shorts and campaigns. Continuity notes, touch-ups on set, day rates.">Karaktergrimm teatrile, lühifilmile ja kampaaniale. Järjepidevuse märkmed, järelpuuderdus võtteplatsil, päevatasu.</p>
+          <span class="tags" data-en="Half / full day · from 55 €/h">Pool / terve päev · alates 55 €/h</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tood">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" data-en="Look book">Töölaud</p>
+          <h2 data-en="Reference material">Referentsmaterjal</h2>
+        </div>
+        <p class="lede" data-en="A style board to point at when you book: say which direction you want and we build from there.">Stiilitahvel, millele broneerides osutada: ütle suund ja ehitame sealt edasi.</p>
+      </div>
+
+      <div class="notice">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#C9A24B" stroke-width="1.2"/><path d="M8 4.6v4.2M8 11.2v.6" stroke="#C9A24B" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span data-en="These are free-licence reference photographs (Pexels), used here as a mood and style board — they are not this artist's own work. Replace them with your own portfolio before the site goes live.">Need on vabakasutusega referentsfotod (Pexels), siin meeleolu- ja stiilitahvlina — need ei ole selle artisti enda tööd. Enne lehe avalikustamist asenda need oma portfooliga.</span>
+      </div>
+
+      <div class="filters" id="filters"></div>
+      <div class="gal" id="gal"></div>
+    </div>
+  </section>
+
+  <section id="reel">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" data-en="In motion">Liikumises</p>
+          <h2 data-en="How the work happens">Kuidas töö käib</h2>
+        </div>
+        <p class="lede" data-en="Short clips of theme makeup being built — brush work, layering, the last five minutes before the door.">Lühiklipid teemameigi ehitamisest — pintslitöö, kihid, viimased viis minutit enne ust.</p>
+      </div>
+      <div class="reel">
+        <div class="clip">
+          <video src="media/skeleton-face-paint.mp4" poster="media/skeleton-face-paint-poster.jpg" controls preload="none" playsinline muted loop></video>
+          <div class="meta"><span data-en="Skeleton, step by step">Skelett, samm-sammult</span><span>0:05</span></div>
+        </div>
+        <div class="clip">
+          <video src="media/halloween-makeup.mp4" poster="media/halloween-makeup-poster.jpg" controls preload="none" playsinline muted loop></video>
+          <div class="meta"><span data-en="Halloween look, finishing">Halloweeni look, viimistlus</span><span>0:09</span></div>
+        </div>
+        <div class="clip">
+          <video src="media/catrina-application.mp4" poster="media/catrina-application-poster.jpg" controls preload="none" playsinline muted loop></video>
+          <div class="meta"><span data-en="Catrina, line work">Catrina, joonistus</span><span>0:12</span></div>
+        </div>
+        <div class="clip">
+          <video src="media/liner-closeup.mp4" poster="media/liner-closeup-poster.jpg" controls preload="none" playsinline muted loop></video>
+          <div class="meta"><span data-en="Detail, close up">Detail, lähivõte</span><span>0:04</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rail" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+  <section id="hinnad">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" data-en="Call sheet">Hinnakiri</p>
+          <h2 data-en="Prices and how long it takes">Hinnad ja ajakulu</h2>
+        </div>
+        <p class="lede" data-en="Every price includes consultation, materials, cleansing wipes and a small touch-up kit to take with you.">Iga hind sisaldab konsultatsiooni, materjale, puhastusvahendeid ja väikest järelparanduskomplekti kaasa.</p>
+      </div>
+
+      <div class="sheet" id="sheet"></div>
+
+      <dl class="extras" id="extras"></dl>
+    </div>
+  </section>
+
+  <section id="protsess">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" data-en="Process">Protsess</p>
+          <h2 data-en="From message to the door">Sõnumist ukseni</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="n">01</span>
+          <h3 data-en="Send the idea">Saada idee</h3>
+          <p data-en="Fill the form below or send a reference picture. I answer within 24 hours with a fixed price and the time slot needed.">Täida allolev vorm või saada referentspilt. Vastan 24 tunni jooksul kindla hinna ja vajaliku ajaaknaga.</p>
+        </div>
+        <div class="step">
+          <span class="n">02</span>
+          <h3 data-en="Confirm the slot">Kinnita aeg</h3>
+          <p data-en="The booking is fixed once a 30% deposit is paid. The rest is paid on the day.">Broneering kinnitub 30% ettemaksuga. Ülejäänu tasud kohapeal.</p>
+        </div>
+        <div class="step">
+          <span class="n">03</span>
+          <h3 data-en="Test run, if needed">Vajadusel proovimeik</h3>
+          <p data-en="For prosthetics, weddings and shoots, book a test session two weeks earlier — the look is photographed and repeated exactly.">Proteeside, pulmade ja võtete puhul broneeri proovimeik kaks nädalat varem — look pildistatakse üles ja korratakse täpselt.</p>
+        </div>
+        <div class="step">
+          <span class="n">04</span>
+          <h3 data-en="On the day">Sündmuse päeval</h3>
+          <p data-en="I arrive 15 minutes early with the full kit. You get a touch-up pack and instructions for taking the makeup off safely.">Saabun 15 minutit varem, kogu kohvriga. Saad kaasa järelparanduspaki ja juhised, kuidas meik ohutult maha võtta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="broneeri">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" data-en="Booking">Broneerimine</p>
+          <h2 data-en="Book a time">Broneeri aeg</h2>
+        </div>
+        <p class="lede" data-en="Pick a service and a free start time — the price builds itself on the right. Taken times are crossed out, so the slot you choose is really free.">Vali teenus ja vaba algusaeg — hind koostatakse kõrval. Hõivatud ajad on maha tõmmatud, seega valitud aeg on tõesti vaba.</p>
+      </div>
+
+      <div class="book-grid">
+        <div>
+          <form class="bk" id="bkform" novalidate>
+            <div class="fields">
+              <div class="field">
+                <label for="f-name" data-en="Name *">Nimi *</label>
+                <input id="f-name" name="name" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="f-email" data-en="E-mail *">E-post *</label>
+                <input id="f-email" name="email" type="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="f-phone" data-en="Phone">Telefon</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+372">
+              </div>
+              <div class="field">
+                <label for="f-service" data-en="Service *">Teenus *</label>
+                <select id="f-service" name="service" required></select>
+              </div>
+              <div class="field" id="wrap-people" hidden>
+                <label for="f-people" data-en="Number of people">Inimeste arv</label>
+                <input id="f-people" name="people" type="number" min="1" max="40" value="4">
+              </div>
+              <div class="field" id="wrap-hours" hidden>
+                <label for="f-hours" data-en="Hours">Tundide arv</label>
+                <input id="f-hours" name="hours" type="number" min="1" max="12" step="1" value="2">
+              </div>
+              <div class="field">
+                <label for="f-date" data-en="Date *">Kuupäev *</label>
+                <input id="f-date" name="date" type="date" required>
+              </div>
+              <div class="field">
+                <label for="f-dur" data-en="Slot needed">Vajalik ajaaken</label>
+                <output class="outbox" id="f-dur">—</output>
+              </div>
+              <div class="field full">
+                <label data-en="Free start times *">Vabad algusajad *</label>
+                <div class="slots" id="slots" role="group" aria-label="Vabad algusajad"></div>
+                <p class="slotnote" id="slotnote"></p>
+                <input type="hidden" id="f-time" name="time">
+              </div>
+              <div class="field full">
+                <label for="f-place" data-en="Location *">Toimumiskoht *</label>
+                <select id="f-place" name="place" required>
+                  <option value="studio" data-en="Studio in Kalamaja, Tallinn">Stuudio Kalamajas, Tallinn</option>
+                  <option value="tallinn" data-en="At your place, within Tallinn (+10 €)">Kliendi juures, Tallinna piires (+10 €)</option>
+                  <option value="outside" data-en="Outside Tallinn (+0.35 €/km, both ways)">Väljaspool Tallinna (+0,35 €/km, edasi-tagasi)</option>
+                </select>
+              </div>
+              <div class="field full" id="wrap-address" hidden>
+                <label for="f-address" data-en="Address / town">Aadress / asula</label>
+                <input id="f-address" name="address">
+              </div>
+              <div class="field full">
+                <label for="f-notes" data-en="The idea, reference, character">Idee, referents, tegelane</label>
+                <textarea id="f-notes" name="notes" placeholder="Nt: zombie-pruut, avatud haav põsel, peab vastu pidama 6 tundi"></textarea>
+              </div>
+            </div>
+            <label class="consent">
+              <input type="checkbox" id="f-consent" required>
+              <span data-en="I agree that my contact details are stored so this booking request can be answered.">Nõustun, et minu kontaktandmed salvestatakse selle broneeringusoovi vastamiseks.</span>
+            </label>
+            <p class="err" id="bkerr" role="alert"></p>
+            <div>
+              <button type="submit" class="btn btn-primary" id="bksubmit" data-en="Send booking request">Saada broneeringusoov</button>
+            </div>
+          </form>
+          <div id="bkdone" hidden></div>
+        </div>
+
+        <aside class="quote" aria-live="polite">
+          <h3 data-en="Estimate">Hinnaarvestus</h3>
+          <div class="body" id="quote"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="kkk">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow" data-en="Questions">Küsimused</p>
+          <h2 data-en="Before you book">Enne broneerimist</h2>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary data-en="How far in advance should I book Halloween?">Kui vara peaks Halloweeni aja broneerima?</summary>
+          <p data-en="The last week of October is usually full by the start of the month. For 31 October, book in September; slots on the day itself are released in pairs and go quickly.">Oktoobri viimane nädal saab tavaliselt kuu alguseks täis. 31. oktoobriks broneeri septembris; sama päeva ajad vabanevad kahekaupa ja lähevad kiiresti.</p>
+        </details>
+        <details>
+          <summary data-en="Do you travel outside Tallinn?">Kas sõidad Tallinnast välja?</summary>
+          <p data-en="Yes, anywhere in Estonia by arrangement. Travel inside Tallinn is included; outside the city it is 0.35 €/km both ways, and for jobs over 150 km I ask for a 4-hour minimum booking.">Jah, kokkuleppel üle Eesti. Tallinna-sisene sõit on hinna sees; väljaspool linna 0,35 €/km edasi-tagasi ning üle 150 km kaugusel palun broneerida vähemalt 4 tundi.</p>
+        </details>
+        <details>
+          <summary data-en="Is the makeup safe for sensitive skin and children?">Kas meik sobib tundlikule nahale ja lastele?</summary>
+          <p data-en="I work with professional water- and alcohol-based paints certified for skin, plus medical-grade adhesives. Tell me about allergies in the booking form and I will do a patch test 24 hours earlier.">Kasutan professionaalseid naha jaoks sertifitseeritud vee- ja alkoholibaasil värve ning meditsiinilisi liime. Märgi allergiad broneerimisvormi ja teen 24 tundi varem nahaproovi.</p>
+        </details>
+        <details>
+          <summary data-en="How long does a look last?">Kui kaua look vastu peab?</summary>
+          <p data-en="A fixed theme makeup holds 8–10 hours, prosthetics 6–8. You get a small touch-up pack, and for events over six hours you can add an on-site touch-up hour at 40 €.">Fikseeritud teemameik peab vastu 8–10 tundi, proteesid 6–8. Kaasa saad väikese järelparanduspaki ning üle kuue tunni kestvatele üritustele saab lisada kohapealse hooldustunni 40 € eest.</p>
+        </details>
+        <details>
+          <summary data-en="What if I need to cancel?">Mis siis, kui pean tühistama?</summary>
+          <p data-en="Cancelling more than 24 hours ahead is free and the deposit moves to a new date. Under 24 hours, 50% of the service price applies, because that slot can no longer be resold.">Rohkem kui 24 tundi ette tühistamine on tasuta ja ettemaks liigub uuele ajale. Alla 24 tunni kehtib 50% teenuse hinnast, sest seda aega ei jõua enam edasi müüa.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4 data-en="Locations">Asukohad</h4>
+      <p class="loc">
+        <span class="lk" data-en="Studio">Stuudio</span>
+        <span data-en="Kalamaja, Tallinn. Exact address comes with the booking confirmation.">Kalamaja, Tallinn. Täpne aadress tuleb broneeringu kinnitusega.</span>
+      </p>
+      <p class="loc">
+        <span class="lk" data-en="At your place">Kliendi juures</span>
+        <span data-en="Anywhere within Tallinn (+10 €)">Kõikjal Tallinna piires (+10 €)</span>
+      </p>
+      <p class="loc">
+        <span class="lk" data-en="On location">Väljasõit</span>
+        <span data-en="Across Estonia by arrangement (0.35 €/km)">Kokkuleppel üle Eesti (0,35 €/km)</span>
+      </p>
+    </div>
+    <div>
+      <h4 data-en="Contact">Kontakt</h4>
+      <p><span class="ph">+372 5XXX XXXX</span></p>
+      <p><span class="ph">tere@sinudomeen.ee</span></p>
+      <p><span class="ph">@sinu_instagram</span></p>
+    </div>
+    <div>
+      <h4 data-en="Hours">Ajad</h4>
+      <p data-en="Wed–Fri 11:00–21:00">K–R 11:00–21:00</p>
+      <p data-en="Sat 10:00–17:00">L 10:00–17:00</p>
+      <p data-en="Sun–Tue by arrangement">P–T kokkuleppel</p>
+    </div>
+    <div>
+      <h4 data-en="Book">Broneeri</h4>
+      <a class="btn btn-primary btn-sm" href="#broneeri" data-en="Booking form">Broneerimisvorm</a>
+    </div>
+  </div>
+  <div class="colophon">
+    <div class="wrap">
+      <span data-en="Placeholder brand — replace the name, contacts and photos.">Kohatäite-bränd — asenda nimi, kontaktid ja fotod.</span>
+      <span data-en="Reference photos &amp; clips: Pexels (free licence)">Referentsfotod ja -klipid: Pexels (vabakasutus)</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------------- services: single source for the call sheet, the form and the estimate ------------- */
+  var GROUPS = [
+    {id:"signature", et:"Teemameik ja erieffektid", en:"Theme makeup & special effects"},
+    {id:"events",    et:"Üritused ja grupid",       en:"Events & groups"},
+    {id:"base",      et:"Baasmeigid",               en:"Standard makeup"},
+    {id:"pro",       et:"Lava, film ja koolitus",   en:"Stage, film & training"}
+  ];
+
+  var SERVICES = [
+    {id:"halloween", g:"signature", price:65,  kind:"fixed", min:45, max:60,
+     et:"Halloweeni teemameik", en:"Halloween theme makeup",
+     etSub:"Kolju, vampiir, nõid, zombi, portselannukk — tipphooaja hind, lisatasu ei lisandu",
+     enSub:"Skull, vampire, witch, zombie, porcelain doll — peak-season rate, no surcharge added"},
+    {id:"sfx", g:"signature", price:85, kind:"fixed", min:60, max:90,
+     et:"SFX — haavad ja tekstuurid", en:"SFX — wounds & textures",
+     etSub:"Vaha, želatiin, kunstveri, verevalumid, põletused", enSub:"Wax, gelatine, blood, bruises, burns"},
+    {id:"prosthetic", g:"signature", price:140, kind:"from", min:120, max:180,
+     et:"Proteesid ja täistransformatsioon", en:"Prosthetics & full transformation",
+     etSub:"Silikoonproteesid, kunstkarv, kehaosad — hind sõltub tükkide arvust", enSub:"Silicone appliances, hair work, body parts — priced per piece"},
+    {id:"fantasy", g:"signature", price:95, kind:"fixed", min:90, max:120,
+     et:"Fantaasia- ja cosplay-meik", en:"Fantasy & cosplay makeup",
+     etSub:"Olend, haldjas, koomiksitegelane, kristallid ja fooliumid", enSub:"Creature, elf, comic character, crystals and foils"},
+    {id:"uv", g:"signature", price:70, kind:"fixed", min:45, max:60,
+     et:"UV- ja neoonmeik", en:"UV & neon makeup",
+     etSub:"Festival, klubiõhtu, mustvalguse fotoseanss", enSub:"Festival, club night, blacklight shoot"},
+    {id:"bodyart", g:"signature", price:60, kind:"from", min:45, max:90,
+     et:"Kehamaaling", en:"Body art",
+     etSub:"Dekoltee, õlad, käed, selg — täiskeha projektina pakkumise alusel", enSub:"Décolletage, shoulders, arms, back — full body by quote"},
+    {id:"editorial", g:"signature", price:75, kind:"fixed", min:60, max:75,
+     et:"Loominguline fotomeik", en:"Editorial photo makeup",
+     etSub:"Graafiline meik kaamerasse, järelpuuderdus võtte ajal", enSub:"Graphic makeup for camera, touch-ups during the shoot"},
+
+    {id:"fp1", g:"events", price:75, kind:"fixed", min:60, max:60,
+     et:"Näomaalingud üritusel, 1 h", en:"Event face painting, 1 h",
+     etSub:"Kuni 8 kujundust, lastele sertifitseeritud värvid", enSub:"Up to 8 designs, child-certified paints"},
+    {id:"fp2", g:"events", price:140, kind:"fixed", min:120, max:120,
+     et:"Näomaalingud, 2 h", en:"Face painting, 2 h",
+     etSub:"Kuni 15 kujundust — sünnipäevale ja klassiüritusele", enSub:"Up to 15 designs — birthdays and school events"},
+    {id:"fp3", g:"events", price:195, kind:"fixed", min:180, max:180,
+     et:"Näomaalingud festivalil, 3 h", en:"Festival face painting, 3 h",
+     etSub:"20–30 kiiret kujundust, edasi 60 €/h", enSub:"20–30 quick designs, 60 €/h after that"},
+    {id:"party", g:"events", price:45, kind:"perPerson", min:20, max:25, minQty:4,
+     et:"Peopakett grupile", en:"Group party package",
+     etSub:"Halloweeni pidu, tüdrukuteõhtu — alates 4 inimesest", enSub:"Halloween party, hen night — from 4 people"},
+    {id:"corporate", g:"events", price:90, kind:"perHour", min:60, max:60, minQty:2,
+     et:"Grimmimisnurk ettevõttele", en:"Branded makeup corner",
+     etSub:"Bränditud nurk messil või firmapeol, min 2 h", enSub:"Branded corner at a fair or company party, min 2 h"},
+
+    {id:"evening", g:"base", price:45, kind:"fixed", min:45, max:45,
+     et:"Õhtu- ja glam-meik", en:"Evening & glam makeup",
+     etSub:"Kunstripsmed hinna sees", enSub:"Strip lashes included"},
+    {id:"photo", g:"base", price:55, kind:"fixed", min:60, max:60,
+     et:"Fotosessiooni meik", en:"Photo session makeup",
+     etSub:"Kaamerakindel, matt viimistlus", enSub:"Camera-proof, matte finish"},
+    {id:"trial", g:"base", price:45, kind:"fixed", min:60, max:60,
+     et:"Proovimeik ja konsultatsioon", en:"Trial makeup & consultation",
+     etSub:"Arvestatakse põhiteenuse hinnast maha", enSub:"Deducted from the main service price"},
+    {id:"bridal", g:"base", price:95, kind:"fixed", min:90, max:90,
+     et:"Pulma- või peomeik", en:"Wedding or celebration makeup",
+     etSub:"Koos proovimeigiga 130 €", enSub:"130 € together with the trial"},
+
+    {id:"stage", g:"pro", price:380, kind:"fixed", min:480, max:480,
+     et:"Lavagrimm, päevatasu", en:"Stage makeup, day rate",
+     etSub:"Kuni 8 tundi, kuni 6 esinejat, järelpuuderdus", enSub:"Up to 8 hours, up to 6 performers, touch-ups"},
+    {id:"film", g:"pro", price:55, kind:"perHour", min:60, max:60, minQty:4,
+     et:"Filmi- ja reklaamivõte", en:"Film & commercial set",
+     etSub:"Tunnitasu, minimaalselt 4 tundi, järjepidevuse märkmed", enSub:"Hourly, 4 hour minimum, continuity notes"},
+    {id:"workshop", g:"pro", price:70, kind:"perHour", min:120, max:150, minQty:2,
+     et:"Isiklik meigikoolitus", en:"One-to-one makeup lesson",
+     etSub:"Sinu nahk, sinu kott, kirjalik kokkuvõte kaasa", enSub:"Your skin, your kit, written notes to take home"},
+    {id:"wsgroup", g:"pro", price:75, kind:"perHour", min:120, max:180, minQty:2,
+     et:"SFX-töötuba grupile", en:"SFX workshop for a group",
+     etSub:"Kuni 6 inimest, materjalid 8 €/osaleja", enSub:"Up to 6 people, materials 8 €/participant"}
+  ];
+
+  var EXTRAS = [
+    {et:"Sõit Tallinna piires", en:"Travel inside Tallinn", val:{et:"hinna sees", en:"included"}},
+    {et:"Teie juures, Tallinnas", en:"At your place in Tallinn", val:{et:"+10 €", en:"+10 €"}},
+    {et:"Väljaspool Tallinna", en:"Outside Tallinn", val:{et:"0,35 €/km", en:"0.35 €/km"}},
+    {et:"Väljaspool tööaega, kokkuleppel", en:"Outside opening hours, by arrangement", val:{et:"+15 €", en:"+15 €"}},
+    {et:"P–T broneering", en:"Sun–Tue booking", val:{et:"kokkuleppel", en:"by arrangement"}},
+    {et:"Erimaterjalid (proteesid, kunstkarv)", en:"Special materials (appliances, hair)", val:{et:"alates 15 €", en:"from 15 €"}},
+    {et:"Tühistamine alla 24 h", en:"Cancelling under 24 h", val:{et:"50% teenuse hinnast", en:"50% of the service"}},
+    {et:"Hooldustund üritusel", en:"Touch-up hour on site", val:{et:"40 €/h", en:"40 €/h"}}
+  ];
+
+  var GAL = [
+    {f:"halloween-skull-portrait.jpg", cat:"halloween", et:"Kolju, hämar võti", en:"Skull, low key", wide:false},
+    {f:"skeleton-glam.jpg",            cat:"halloween", et:"Skelett-glam", en:"Skeleton glam"},
+    {f:"spider-eye.jpg",               cat:"halloween", et:"Ämblik silma ümber", en:"Spider around the eye"},
+    {f:"skull-witch-hat.jpg",          cat:"halloween", et:"Nõid ja kolju", en:"Witch and skull"},
+    {f:"catrina-marigold.jpg",         cat:"catrina",   et:"Catrina saialilledes", en:"Catrina in marigolds", wide:true},
+    {f:"catrina-portrait.jpg",         cat:"catrina",   et:"Surnute päeva portree", en:"Day of the Dead portrait"},
+    {f:"editorial-art-face.jpg",       cat:"art",       et:"Graafiline editorial", en:"Graphic editorial"},
+    {f:"bold-colour-art.jpg",          cat:"art",       et:"Värviplokid", en:"Colour blocking"},
+    {f:"festival-eye-art.jpg",         cat:"art",       et:"Festivali silmakunst", en:"Festival eye art"},
+    {f:"jewels-turban.jpg",            cat:"art",       et:"Kivid ja peakate", en:"Jewels and headwrap"},
+    {f:"uv-neon-body.jpg",             cat:"uv",        et:"Neoon kehal", en:"Neon on the body", wide:true},
+    {f:"uv-fluorescent.jpg",           cat:"uv",        et:"Fluorestseeruv joonistus", en:"Fluorescent line work"},
+    {f:"uv-face-paint.jpg",            cat:"uv",        et:"UV näol", en:"UV on the face"},
+    {f:"kids-spider-net.jpg",          cat:"kids",      et:"Ämblikuvõrk, lasteüritus", en:"Spider web, kids' event"},
+    {f:"kids-colour-paint.jpg",        cat:"kids",      et:"Sünnipäevanurk", en:"Birthday corner"},
+    {f:"process-brush.jpg",            cat:"process",   et:"Pintsel töös", en:"Brush at work"},
+    {f:"process-facepaint.jpg",        cat:"process",   et:"Joon paika", en:"Setting the line"}
+  ];
+
+  var CATS = [
+    {id:"all",       et:"Kõik", en:"All"},
+    {id:"halloween", et:"Halloween ja õudus", en:"Halloween & horror"},
+    {id:"catrina",   et:"Catrina", en:"Catrina"},
+    {id:"art",       et:"Fantaasia ja editorial", en:"Fantasy & editorial"},
+    {id:"uv",        et:"UV ja neoon", en:"UV & neon"},
+    {id:"kids",      et:"Lapsed ja üritused", en:"Kids & events"},
+    {id:"process",   et:"Protsess", en:"Process"}
+  ];
+
+  /* ---------------- language ---------------- */
+  var lang = "et";
+  try { var s = localStorage.getItem("mk-lang"); if (s === "en" || s === "et") lang = s; } catch (e) {}
+
+  function T(o){ return lang === "en" && o.en ? o.en : o.et; }
+
+  function applyLang(){
+    document.documentElement.lang = lang;
+    var nodes = document.querySelectorAll("[data-en]");
+    for (var i = 0; i < nodes.length; i++){
+      var n = nodes[i];
+      if (!n.hasAttribute("data-et")) n.setAttribute("data-et", n.textContent);
+      n.textContent = n.getAttribute(lang === "en" ? "data-en" : "data-et");
+    }
+    var ph = document.getElementById("f-notes");
+    ph.placeholder = lang === "en"
+      ? "e.g. zombie bride, open wound on the cheek, must last 6 hours"
+      : "Nt: zombie-pruut, avatud haav põsel, peab vastu pidama 6 tundi";
+    var btns = document.querySelectorAll(".lang button");
+    for (var j = 0; j < btns.length; j++){
+      btns[j].setAttribute("aria-pressed", String(btns[j].getAttribute("data-lang") === lang));
+    }
+  }
+
+  function setLang(next){
+    if (next === lang) return;
+    lang = next;
+    try { localStorage.setItem("mk-lang", lang); } catch (e) {}
+    applyLang();
+    renderSheet(); renderExtras(); renderFilters(); renderGallery(); renderServiceOptions(); renderSlots(); renderQuote();
+  }
+
+  var langBtns = document.querySelectorAll(".lang button");
+  for (var b = 0; b < langBtns.length; b++){
+    langBtns[b].addEventListener("click", function(){ setLang(this.getAttribute("data-lang")); });
+  }
+
+  /* ---------------- formatting helpers ---------------- */
+  function eur(n){
+    var r = Math.round(n * 100) / 100;
+    var str = (r % 1 === 0) ? String(r) : r.toFixed(2).replace(".", lang === "en" ? "." : ",");
+    return str + " €";
+  }
+  function mins(a, b){
+    function one(m){ return m >= 60 && m % 60 === 0 ? (m / 60) + " h" : (m >= 60 ? Math.floor(m/60) + " h " + (m%60) + " min" : m + " min"); }
+    return a === b ? one(a) : one(a) + "–" + one(b);
+  }
+  function priceLabel(s){
+    if (s.kind === "perPerson") return eur(s.price) + "<small>" + (lang === "en" ? "per person" : "inimese kohta") + "</small>";
+    if (s.kind === "perHour")   return eur(s.price) + "<small>" + (lang === "en" ? "per hour" : "tunnis") + "</small>";
+    if (s.kind === "from")      return eur(s.price) + "<small>" + (lang === "en" ? "from" : "alates") + "</small>";
+    return eur(s.price);
+  }
+
+  /* ---------------- call sheet ---------------- */
+  function renderSheet(){
+    var host = document.getElementById("sheet");
+    var html = "";
+    for (var g = 0; g < GROUPS.length; g++){
+      var grp = GROUPS[g];
+      html += '<div class="sheet-group"><h3>' + T(grp) + "</h3>";
+      html += '<div class="sheet-head"><span>' + (lang === "en" ? "Service" : "Teenus") + "</span><span>"
+            + (lang === "en" ? "Duration" : "Kestus") + "</span><span>" + (lang === "en" ? "Price" : "Hind") + "</span></div>";
+      for (var i = 0; i < SERVICES.length; i++){
+        var s = SERVICES[i];
+        if (s.g !== grp.id) continue;
+        html += '<div class="row"><span class="name">' + T(s)
+             + '<span class="sub">' + (lang === "en" ? s.enSub : s.etSub) + "</span></span>"
+             + '<span class="dur">' + mins(s.min, s.max) + "</span>"
+             + '<span class="price">' + priceLabel(s) + "</span></div>";
+      }
+      html += "</div>";
+    }
+    host.innerHTML = html;
+  }
+
+  function renderExtras(){
+    var host = document.getElementById("extras");
+    var html = "";
+    for (var i = 0; i < EXTRAS.length; i++){
+      html += '<div class="extra"><dt>' + T(EXTRAS[i]) + "</dt><dd>" + T(EXTRAS[i].val) + "</dd></div>";
+    }
+    host.innerHTML = html;
+  }
+
+  /* ---------------- gallery ---------------- */
+  var activeCat = "all";
+
+  function renderFilters(){
+    var host = document.getElementById("filters");
+    var html = "";
+    for (var i = 0; i < CATS.length; i++){
+      html += '<button type="button" class="chip" data-cat="' + CATS[i].id + '" aria-pressed="'
+            + (CATS[i].id === activeCat) + '">' + T(CATS[i]) + "</button>";
+    }
+    host.innerHTML = html;
+    var chips = host.querySelectorAll(".chip");
+    for (var j = 0; j < chips.length; j++){
+      chips[j].addEventListener("click", function(){
+        activeCat = this.getAttribute("data-cat");
+        renderFilters(); renderGallery();
+      });
+    }
+  }
+
+  function renderGallery(){
+    var host = document.getElementById("gal");
+    var html = "";
+    for (var i = 0; i < GAL.length; i++){
+      var it = GAL[i];
+      if (activeCat !== "all" && it.cat !== activeCat) continue;
+      html += '<figure' + (it.wide ? ' class="wide"' : "") + '>'
+            + '<img src="media/' + it.f + '" alt="' + T(it) + '" loading="lazy">'
+            + "<figcaption>" + T(it) + "</figcaption></figure>";
+    }
+    host.innerHTML = html;
+  }
+
+  /* ---------------- booking form ---------------- */
+  var elService = document.getElementById("f-service");
+  var elPeopleWrap = document.getElementById("wrap-people");
+  var elHoursWrap = document.getElementById("wrap-hours");
+  var elAddressWrap = document.getElementById("wrap-address");
+  var elPeople = document.getElementById("f-people");
+  var elHours = document.getElementById("f-hours");
+  var elPlace = document.getElementById("f-place");
+  var elDate = document.getElementById("f-date");
+  var elTime = document.getElementById("f-time");
+
+  function renderServiceOptions(){
+    var keep = elService.value;
+    var html = "";
+    for (var g = 0; g < GROUPS.length; g++){
+      html += '<optgroup label="' + T(GROUPS[g]) + '">';
+      for (var i = 0; i < SERVICES.length; i++){
+        var s = SERVICES[i];
+        if (s.g !== GROUPS[g].id) continue;
+        var suffix = s.kind === "perPerson" ? " / " + (lang === "en" ? "person" : "inimene")
+                   : s.kind === "perHour" ? " / h"
+                   : s.kind === "from" ? "+" : "";
+        html += '<option value="' + s.id + '">' + T(s) + " — " + eur(s.price) + suffix + "</option>";
+      }
+      html += "</optgroup>";
+    }
+    elService.innerHTML = html;
+    elService.value = keep || "halloween";
+    if (!elService.value) elService.value = "halloween";
+    syncFields();
+  }
+
+  function currentService(){
+    for (var i = 0; i < SERVICES.length; i++) if (SERVICES[i].id === elService.value) return SERVICES[i];
+    return SERVICES[0];
+  }
+
+  function syncFields(){
+    var s = currentService();
+    elPeopleWrap.hidden = s.kind !== "perPerson";
+    elHoursWrap.hidden = s.kind !== "perHour";
+    if (s.kind === "perPerson" && Number(elPeople.value) < (s.minQty || 1)) elPeople.value = s.minQty || 1;
+    if (s.kind === "perHour" && Number(elHours.value) < (s.minQty || 1)) elHours.value = s.minQty || 1;
+    elAddressWrap.hidden = elPlace.value === "studio";
+  }
+
+  /* ---------------- availability: real start times on the calendar ---------------- */
+  /* Opening hours by weekday (0 = Sunday). Wed–Sat are the regular days;
+     Sun–Tue are by arrangement, Saturday closes early. */
+  var DAY_HOURS = [
+    {open: 11 * 60, close: 19 * 60, byRequest: true},
+    {open: 11 * 60, close: 19 * 60, byRequest: true},
+    {open: 11 * 60, close: 19 * 60, byRequest: true},
+    {open: 11 * 60, close: 21 * 60, byRequest: false},
+    {open: 11 * 60, close: 21 * 60, byRequest: false},
+    {open: 11 * 60, close: 21 * 60, byRequest: false},
+    {open: 10 * 60, close: 17 * 60, byRequest: false}
+  ];
+  var STEP = 30, BUFFER = 15;
+
+  function dayOf(dateStr){
+    if (!dateStr) return null;
+    var p = dateStr.split("-");
+    if (p.length !== 3) return null;
+    return DAY_HOURS[new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2])).getDay()];
+  }
+  var elSlots = document.getElementById("slots");
+  var elSlotNote = document.getElementById("slotnote");
+  var elDur = document.getElementById("f-dur");
+  var dbPromise = (window.claude && window.claude.use) ? window.claude.use("db").catch(function(){ return null; }) : Promise.resolve(null);
+  var clientId = "c" + Math.random().toString(36).slice(2, 10);
+  var takenBlocks = [], liveDay = null, unsubDay = null, chosen = null, dbOk = null;
+  dbPromise.then(function(db){ dbOk = !!db; renderSlots(); });
+
+  /* Where booking requests go when this copy runs on plain static hosting
+     (no live database). Set BOOKING_URL to a Fresha / Calendly page to send
+     people there instead of the e-mail form. */
+  var CONTACT_EMAIL = "tere@sinudomeen.ee";
+  var BOOKING_URL = "";
+
+  /* Booked times on a static host come from bookings.json next to this page:
+     [{ "date": "2026-10-31", "time": "12:00", "mins": 120 }] */
+  var staticBlocks = [], staticOk = false;
+  try {
+    fetch("bookings.json", {cache: "no-store"}).then(function(r){
+      if (!r.ok) throw 0;
+      return r.json();
+    }).then(function(list){
+      staticOk = true;
+      if (!list || !list.length){ renderSlots(); return; }
+      staticBlocks = list.filter(function(b){ return b && b.date && b.time; }).map(function(b){
+        var st = toMin(b.time);
+        return {date: b.date, start: st, end: st + (Number(b.mins) || 60)};
+      });
+      renderSlots();
+    })["catch"](function(){});
+  } catch (e) {}
+
+  function pad2(n){ return (n < 10 ? "0" : "") + n; }
+  function hhmm(m){ return pad2(Math.floor(m / 60)) + ":" + pad2(m % 60); }
+  function toMin(t){ var p = String(t).split(":"); return Number(p[0]) * 60 + Number(p[1] || 0); }
+  function todayIso(){ var d = new Date(); return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+  function hoursLabel(m){ return m % 60 === 0 ? (m / 60) + " h" : Math.floor(m / 60) + " h " + (m % 60) + " min"; }
+
+  function slotLength(){ return Math.ceil((estimate().durMaxMin + BUFFER) / STEP) * STEP; }
+
+  function watchDay(){
+    var d = elDate.value;
+    if (d === liveDay){ renderSlots(); return; }
+    liveDay = d;
+    if (unsubDay){ unsubDay(); unsubDay = null; }
+    takenBlocks = [];
+    renderSlots();
+    if (!d) return;
+    dbPromise.then(function(db){
+      if (!db || elDate.value !== d) return;
+      unsubDay = db.collection("slots").where("date", "==", d).onSnapshot(function(snap){
+        var out = [];
+        for (var i = 0; i < snap.docs.length; i++){
+          var v = snap.docs[i].data() || {};
+          if (v.status !== "booked") continue;
+          var st = typeof v.start === "number" ? v.start : toMin(v.time || "0:00");
+          out.push({start: st, end: st + (Number(v.mins) || 60)});
+        }
+        takenBlocks = out;
+        renderSlots();
+      }, function(){ takenBlocks = []; renderSlots(); });
+    });
+  }
+
+  function isFree(start, len){
+    var i;
+    for (i = 0; i < takenBlocks.length; i++){
+      if (start < takenBlocks[i].end && start + len > takenBlocks[i].start) return false;
+    }
+    for (i = 0; i < staticBlocks.length; i++){
+      if (staticBlocks[i].date !== elDate.value) continue;
+      if (start < staticBlocks[i].end && start + len > staticBlocks[i].start) return false;
+    }
+    return true;
+  }
+
+  function renderSlots(){
+    var len = slotLength();
+    elDur.textContent = hoursLabel(len) + (lang === "en" ? " reserved" : " broneeritakse");
+    var day = dayOf(elDate.value);
+    var now = new Date(), nowMin = now.getHours() * 60 + now.getMinutes();
+    var isToday = elDate.value === todayIso();
+    var html = "", free = 0, keep = false;
+    if (day){
+      for (var t = day.open; t + len <= day.close; t += STEP){
+        var busy = !isFree(t, len) || (isToday && t < nowMin + 120);
+        if (!busy){ free++; if (chosen === t) keep = true; }
+        html += '<button type="button" class="slot' + (chosen === t && !busy ? " on" : "")
+              + (day.byRequest ? " req" : "") + '" data-t="' + t + '"'
+              + (busy ? " disabled" : "") + ">" + hhmm(t) + "</button>";
+      }
+    }
+    if (!keep) chosen = null;
+    document.getElementById("f-time").value = chosen === null ? "" : hhmm(chosen);
+    elSlots.innerHTML = html;
+
+    var note;
+    if (!elDate.value) note = lang === "en" ? "Pick a date first." : "Vali esmalt kuupäev.";
+    else if (dbOk === false && !staticOk) note = lang === "en"
+      ? "Availability could not be loaded — I confirm the slot by e-mail."
+      : "Vabade aegade nimekirja ei õnnestunud laadida — kinnitan aja e-kirjaga.";
+    else if (free === 0) note = lang === "en"
+      ? "No free start times that day — try another date."
+      : "Sel päeval pole vabu algusaegu — proovi teist kuupäeva.";
+    else if (day.byRequest) note = lang === "en"
+      ? "Sun–Tue is by arrangement: pick a time, I confirm it separately within 24 h."
+      : "P–T on kokkuleppel: vali aeg ja kinnitan selle eraldi 24 tunni jooksul.";
+    else note = lang === "en"
+      ? free + " free start times · crossed-out times are taken"
+      : free + " vaba algusaega · maha tõmmatud ajad on juba broneeritud";
+    elSlotNote.textContent = note;
+  }
+
+  elSlots.addEventListener("click", function(ev){
+    var b = ev.target.closest ? ev.target.closest(".slot") : null;
+    if (!b || b.disabled) return;
+    chosen = Number(b.getAttribute("data-t"));
+    renderSlots();
+    renderQuote();
+  });
+
+  function estimate(){
+    var s = currentService();
+    var qty = 1, lines = [];
+    if (s.kind === "perPerson") qty = Math.max(Number(elPeople.value) || 1, s.minQty || 1);
+    if (s.kind === "perHour")   qty = Math.max(Number(elHours.value) || 1, s.minQty || 1);
+
+    var base = s.price * qty;
+    var durMin = s.min * (s.kind === "fixed" || s.kind === "from" ? 1 : qty);
+    var durMax = s.max * (s.kind === "fixed" || s.kind === "from" ? 1 : qty);
+
+    var qtyLabel = s.kind === "perPerson" ? qty + " × " + eur(s.price)
+                 : s.kind === "perHour" ? qty + " h × " + eur(s.price)
+                 : eur(s.price);
+    lines.push({label: T(s), value: qtyLabel});
+
+    var total = base;
+    if (elPlace.value === "tallinn"){ total += 10; lines.push({label: lang === "en" ? "Travel in Tallinn" : "Sõit Tallinnas", value: "+10 €"}); }
+    if (elPlace.value === "outside") lines.push({label: lang === "en" ? "Travel outside Tallinn" : "Sõit väljaspool Tallinna", value: "0,35 €/km", muted: true});
+    if (s.kind === "from" || s.id === "prosthetic")
+      lines.push({label: lang === "en" ? "Special materials" : "Erimaterjalid", value: (lang === "en" ? "from " : "alates ") + "15 €", muted: true});
+
+    return {
+      service: s, qty: qty, lines: lines, total: total,
+      durMinMin: durMin, durMaxMin: durMax,
+      duration: mins(durMin, durMax),
+      deposit: Math.round(total * 0.3)
+    };
+  }
+
+  function renderQuote(){
+    var e = estimate();
+    var html = "";
+    for (var i = 0; i < e.lines.length; i++){
+      html += '<div class="qline' + (e.lines[i].muted ? " muted" : "") + '"><span>' + e.lines[i].label + "</span><span>" + e.lines[i].value + "</span></div>";
+    }
+    html += '<div class="qline"><span>' + (lang === "en" ? "Time needed" : "Ajakulu") + "</span><span>" + e.duration + "</span></div>";
+    html += '<div class="qline"><span>' + (lang === "en" ? "Chosen slot" : "Valitud aeg") + "</span><span>"
+         + (chosen === null ? (lang === "en" ? "not chosen" : "valimata")
+                            : (elDate.value + " " + hhmm(chosen))) + "</span></div>";
+    html += '<div class="qtotal"><span class="lbl">' + (lang === "en" ? "Estimate" : "Kokku") + '</span><span class="val">' + eur(e.total) + "</span></div>";
+    html += '<p class="qnote">' + (lang === "en"
+        ? "Deposit to hold the slot: " + eur(e.deposit) + " (30%). Travel outside Tallinn is added per kilometre after we agree the location."
+        : "Ettemaks aja kinnitamiseks: " + eur(e.deposit) + " (30%). Väljaspool Tallinna lisandub kilomeetritasu pärast koha kokkuleppimist.") + "</p>";
+    document.getElementById("quote").innerHTML = html;
+  }
+
+  ["change", "input"].forEach(function(ev){
+    document.getElementById("bkform").addEventListener(ev, function(evt){
+      if (evt.target === elService || evt.target === elPlace) syncFields();
+      if (evt.target === elDate) watchDay(); else renderSlots();
+      renderQuote();
+    });
+  });
+
+  /* ---------------- submit: claim the slot, then store the booking ---------------- */
+  document.getElementById("bkform").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var err = document.getElementById("bkerr");
+    var btn = document.getElementById("bksubmit");
+    var name = document.getElementById("f-name").value.trim();
+    var email = document.getElementById("f-email").value.trim();
+    var consent = document.getElementById("f-consent").checked;
+
+    if (!name || !email || !elDate.value || chosen === null || !consent){
+      err.textContent = lang === "en"
+        ? "Fill in name, e-mail, date, pick a free start time and tick the consent box."
+        : "Täida nimi, e-post, kuupäev, vali vaba algusaeg ja märgi nõusolek.";
+      return;
+    }
+    err.textContent = "";
+    btn.disabled = true;
+    btn.textContent = lang === "en" ? "Reserving…" : "Kinnitan aega…";
+
+    var e = estimate();
+    var len = slotLength();
+    var time = hhmm(chosen);
+    var ref = "GK-" + elDate.value.replace(/-/g, "").slice(2) + "-" + Math.random().toString(36).slice(2, 6).toUpperCase();
+    var payload = {
+      ref: ref, name: name, email: email,
+      phone: document.getElementById("f-phone").value.trim(),
+      service: e.service.id, serviceName: e.service.et, qty: e.qty,
+      date: elDate.value, time: time, start: chosen, mins: len,
+      byRequest: !!(dayOf(elDate.value) || {}).byRequest,
+      place: elPlace.value, address: document.getElementById("f-address").value.trim(),
+      notes: document.getElementById("f-notes").value.trim(),
+      estimate: e.total, duration: e.duration, deposit: e.deposit,
+      status: "new", createdAt: new Date().toISOString()
+    };
+    var slotId = elDate.value + "_" + time.replace(":", "");
+
+    dbPromise.then(function(db){
+      if (!db) return "nodb";
+      var sref = db.doc("slots/" + slotId);
+      return sref.acquire({holder: clientId, ttlMs: 10000}).then(function(res){
+        if (!res.acquired) return "taken";
+        return sref.get().then(function(snap){
+          var cur = snap.exists ? snap.data() : null;
+          if (cur && cur.status === "booked") return "taken";
+          return sref.set({
+            date: elDate.value, time: time, start: chosen, mins: len,
+            service: e.service.id, ref: ref, status: "booked",
+            createdAt: new Date().toISOString()
+          }).then(function(){
+            return db.doc("bookings/" + ref).set(payload);
+          }).then(function(){ return "ok"; });
+        });
+      });
+    }).then(function(result){
+      if (result === "taken"){
+        btn.disabled = false;
+        btn.textContent = lang === "en" ? "Send booking request" : "Saada broneeringusoov";
+        err.textContent = lang === "en"
+          ? "That start time was taken a moment ago — please pick another."
+          : "See algusaeg võeti hetk tagasi ära — vali palun teine.";
+        chosen = null;
+        renderSlots();
+        renderQuote();
+        return;
+      }
+      showDone(payload, e, result === "ok" ? "saved" : "email");
+    }).catch(function(){
+      showDone(payload, e, "email");
+    });
+  });
+
+  function placeText(p){
+    return p.place === "studio" ? (lang === "en" ? "Studio in Kalamaja, Tallinn" : "Stuudio Kalamajas, Tallinn")
+         : p.place === "tallinn" ? (lang === "en" ? "Client's place, Tallinn" : "Kliendi juures, Tallinn")
+         : (lang === "en" ? "Outside Tallinn" : "Väljaspool Tallinna");
+  }
+
+  function mailtoLink(p, e){
+    var L = lang === "en";
+    var subject = (L ? "Booking request " : "Broneeringusoov ") + p.date + " " + p.time + " — " + T(e.service);
+    var body = [
+      (L ? "Name: " : "Nimi: ") + p.name,
+      (L ? "E-mail: " : "E-post: ") + p.email,
+      (L ? "Phone: " : "Telefon: ") + (p.phone || "—"),
+      "",
+      (L ? "Service: " : "Teenus: ") + T(e.service) + (p.qty > 1 ? " × " + p.qty : ""),
+      (L ? "Date and time: " : "Kuupäev ja kellaaeg: ") + p.date + " " + p.time,
+      (L ? "Time needed: " : "Ajakulu: ") + p.duration,
+      (L ? "Location: " : "Koht: ") + placeText(p) + (p.address ? ", " + p.address : ""),
+      (L ? "Estimate: " : "Hinnang: ") + eur(p.estimate) + (L ? ", deposit " : ", ettemaks ") + eur(p.deposit),
+      "",
+      (L ? "Idea / reference: " : "Idee / referents: ") + (p.notes || "—"),
+      (L ? "Reference: " : "Viide: ") + p.ref
+    ].join("\n");
+    return "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+
+  function showDone(p, e, mode){
+    document.getElementById("bkform").hidden = true;
+    var host = document.getElementById("bkdone");
+    host.hidden = false;
+    var placeLabel = placeText(p);
+    var link = mailtoLink(p, e);
+    if (mode === "email"){ try { window.location.href = link; } catch (x) {} }
+    host.innerHTML =
+      '<div class="done"><h3>' + (lang === "en" ? "Request received" : "Soov on kohal") + "</h3>"
+      + "<p>" + (mode === "saved"
+          ? (lang === "en"
+              ? "Saved. I answer within 24 hours with a confirmation and the deposit details. Keep the reference below."
+              : "Salvestatud. Vastan 24 tunni jooksul kinnituse ja ettemaksu andmetega. Hoia viitenumber alles.")
+          : (lang === "en"
+              ? "Your mail programme should have opened with everything filled in — send it and I answer within 24 hours."
+              : "Sinu e-posti programm peaks olema avanenud koos täidetud kirjaga — saada see teele ja vastan 24 tunni jooksul.")) + "</p>"
+      + (mode === "email"
+          ? '<p><a class="btn btn-ghost btn-sm" href="' + link + '">'
+            + (lang === "en" ? "Open the e-mail again" : "Ava e-kiri uuesti") + "</a></p>"
+          : "")
+      + "<dl>"
+      + "<dt>" + (lang === "en" ? "Reference" : "Viide") + "</dt><dd>" + p.ref + "</dd>"
+      + "<dt>" + (lang === "en" ? "Service" : "Teenus") + "</dt><dd>" + T(e.service) + "</dd>"
+      + "<dt>" + (lang === "en" ? "When" : "Millal") + "</dt><dd>" + p.date + " " + p.time + "</dd>"
+      + "<dt>" + (lang === "en" ? "Where" : "Kus") + "</dt><dd>" + placeLabel + (p.address ? ", " + p.address : "") + "</dd>"
+      + "<dt>" + (lang === "en" ? "Duration" : "Kestus") + "</dt><dd>" + p.duration + "</dd>"
+      + "<dt>" + (lang === "en" ? "Estimate" : "Hinnang") + "</dt><dd>" + eur(p.estimate) + "</dd>"
+      + "<dt>" + (lang === "en" ? "Deposit" : "Ettemaks") + "</dt><dd>" + eur(p.deposit) + "</dd>"
+      + "</dl></div>";
+    host.scrollIntoView({behavior: "smooth", block: "center"});
+  }
+
+  /* ---------------- boot ---------------- */
+  var today = new Date();
+  var iso = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  elDate.min = iso;
+  elDate.value = "2026-10-31";
+
+  if (BOOKING_URL){
+    var extP = document.createElement("p");
+    extP.style.margin = "0 0 20px";
+    var extA = document.createElement("a");
+    extA.className = "btn btn-primary";
+    extA.href = BOOKING_URL;
+    extA.target = "_blank";
+    extA.rel = "noopener";
+    extA.textContent = lang === "en" ? "Book in the calendar" : "Broneeri kalendris";
+    extP.appendChild(extA);
+    var bkf = document.getElementById("bkform");
+    bkf.parentNode.insertBefore(extP, bkf);
+  }
+
+  applyLang();
+  renderSheet();
+  renderExtras();
+  renderFilters();
+  renderGallery();
+  renderServiceOptions();
+  watchDay();
+  renderQuote();
+})();
+</script>
+
+</body>
+</html>
